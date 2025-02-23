@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class CustomCard extends StatelessWidget {
   const CustomCard({
@@ -8,7 +9,7 @@ class CustomCard extends StatelessWidget {
     this.isFuture = false,
     this.isDone = false,
   });
-  final IconData icon;
+  final String icon;
   final String title;
   final bool isFuture;
 
@@ -33,9 +34,10 @@ class CustomCard extends StatelessWidget {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Icon(
+                  SvgPicture.asset(
                     icon,
-                    size: 20,
+                    width: 22,
+                    height: 22,
                   ),
                   SizedBox(width: 5),
                   Text(

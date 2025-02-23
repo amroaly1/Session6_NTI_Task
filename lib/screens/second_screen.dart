@@ -1,0 +1,221 @@
+import 'dart:developer';
+
+import 'package:flutter/material.dart';
+
+class SecondScreen extends StatelessWidget {
+  const SecondScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          children: [
+            SizedBox(height: 100),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 16,
+              ),
+              child: SizedBox(
+                height: 100,
+                child: TextFormField(
+                  onFieldSubmitted: (value) {
+                    log("onFieldSubmitted : $value");
+                  },
+                  onChanged: (String value) {
+                    log("onChanged : $value");
+                  },
+                  onSaved: (newValue) {
+                    log("onChanged : $newValue");
+                  },
+                  decoration: InputDecoration(
+                    // semanticCounterText: "semanticCounterText",
+                    filled: true,
+                    fillColor: Colors.cyanAccent,
+                    // errorText: "error",
+                    errorStyle: TextStyle(
+                      color: Colors.red,
+                    ),
+                    // isDense: true,
+                    // isCollapsed: true,
+                    hintText: "enter your name",
+                    labelText: "your name",
+                    hintStyle: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 14,
+                    ),
+                    labelStyle: TextStyle(
+                      color: Colors.black,
+                      fontSize: 18,
+                    ),
+                    border: outlineInputBorder(),
+                    enabledBorder: UnderlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: BorderSide(
+                        color: Colors.blue,
+                        width: 5,
+                      ),
+                    ),
+                    enabled: true,
+                    focusColor: Colors.yellow,
+                    focusedBorder: outlineInputBorder(
+                      color: Colors.blue,
+                      width: 2,
+                    ),
+                    errorBorder: outlineInputBorder(
+                      color: Colors.red,
+                      width: 3,
+                    ),
+                    focusedErrorBorder: outlineInputBorder(
+                      color: Colors.red,
+                      width: 3,
+                    ),
+                    prefix: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        "data",
+                        style: TextStyle(color: Colors.red),
+                      ),
+                    ),
+                    prefixIcon: Icon(
+                      Icons.person,
+                    ),
+                    suffix: Icon(Icons.abc_outlined),
+                    suffixIcon: Icon(Icons.abc_outlined),
+                    icon: Icon(
+                      Icons.data_saver_off_outlined,
+                    ),
+                    // prefixText: "prefixText",
+                    // suffixText: "suffixText",
+
+                    counter: Icon(Icons.countertops),
+                    disabledBorder: outlineInputBorder(
+                      color: Colors.grey,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue,
+                elevation: 6,
+                foregroundColor: Colors.white,
+                padding: EdgeInsets.symmetric(
+                  horizontal: 50,
+                  vertical: 10,
+                ),
+                side: BorderSide(
+                  color: Colors.black,
+                  width: 3,
+                ),
+                textStyle: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              child: Text(
+                "Click",
+                // style: TextStyle(
+                //   // color: Colors.white,
+                //   fontWeight: FontWeight.bold,
+                // ),
+              ),
+            ),
+            MaterialButton(
+              color: Colors.blue,
+              padding: EdgeInsets.symmetric(
+                horizontal: 50,
+                vertical: 10,
+              ),
+              shape: RoundedRectangleBorder(
+                side: BorderSide(
+                  color: Colors.black,
+                  width: 1.5,
+                ),
+                borderRadius: BorderRadius.circular(
+                  20.0,
+                ),
+              ),
+              onPressed: () {},
+              child: Text("click"),
+            ),
+            TextButton(
+              style: TextButton.styleFrom(
+                backgroundColor: Colors.blue,
+                elevation: 6,
+                foregroundColor: Colors.white,
+                padding: EdgeInsets.symmetric(
+                  horizontal: 50,
+                  vertical: 10,
+                ),
+                side: BorderSide(
+                  color: Colors.black,
+                  width: 3,
+                ),
+              ),
+              // style: ElevatedButton.styleFrom(
+              //   backgroundColor: Colors.blue,
+              //   elevation: 6,
+              //   foregroundColor: Colors.white,
+              //   padding: EdgeInsets.symmetric(
+              //     horizontal: 50,
+              //     vertical: 10,
+              //   ),
+              //   side: BorderSide(
+              //     color: Colors.black,
+              //     width: 3,
+              //   ),
+              // ),
+              onPressed: () {},
+              child: Icon(
+                Icons.ac_unit,
+              ),
+              // child: Text(
+              //   "click",
+              //   style: TextStyle(
+              //     fontWeight: FontWeight.bold,
+              //   ),
+              // ),
+            ),
+            IconButton(
+              style: IconButton.styleFrom(
+                backgroundColor: Colors.blue,
+                elevation: 6,
+                foregroundColor: Colors.white,
+                padding: EdgeInsets.symmetric(
+                  horizontal: 50,
+                  vertical: 10,
+                ),
+                side: BorderSide(
+                  color: Colors.black,
+                  width: 3,
+                ),
+              ),
+              onPressed: () {},
+              // icon: Icon(Icons.ac_unit),
+              icon: Text(
+                "click",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  OutlineInputBorder outlineInputBorder({Color? color, double? width}) {
+    return OutlineInputBorder(
+      borderRadius: BorderRadius.circular(12),
+      borderSide: BorderSide(
+        color: color ?? Colors.grey,
+        width: width ?? 1.5,
+      ),
+    );
+  }
+}

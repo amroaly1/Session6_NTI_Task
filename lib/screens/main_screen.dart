@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:session6_task_nti/core/constant/app_icons.dart';
 import 'package:session6_task_nti/widget/custom_card.dart';
 import 'package:session6_task_nti/widget/custom_card_option.dart';
 
@@ -8,18 +10,29 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffF3F5F4),
       appBar: AppBar(
-        backgroundColor: const Color(0xffF3F5F4),
-        leading: const Icon(
-          Icons.arrow_back_ios_new,
-          size: 15,
+        // leading: const Icon(
+        //   Icons.arrow_back_ios_new,
+        //   size: 15,
+        // ),
+        // leadingWidth: 24,
+        leading: IconButton(
+          onPressed: () {},
+          icon: SvgPicture.asset(
+            AppIcons.arrowBack,
+            // width: 24,
+            // height: 24,
+            // fit: BoxFit.scaleDown,
+            semanticsLabel: "Back",
+          ),
         ),
         title: const Text(
           "Today Tasks",
           style: TextStyle(
+            fontFamily: "Lexend Deca",
             fontSize: 19,
             color: Color(0xff24252C),
+            fontWeight: FontWeight.w300,
           ),
         ),
         centerTitle: true,
@@ -120,22 +133,22 @@ class MainScreen extends StatelessWidget {
             spacing: 10,
             children: [
               CustomCard(
-                icon: Icons.work,
+                icon: AppIcons.workTask,
                 title: "Work Task",
                 isFuture: true,
               ),
               CustomCard(
-                icon: Icons.work,
+                icon: AppIcons.workTask,
                 title: "Work Task",
-                isFuture: true,
+                isDone: true,
               ),
               CustomCard(
-                icon: Icons.home,
+                icon: AppIcons.homeTask,
                 title: "Home Task",
                 isDone: true,
               ),
               CustomCard(
-                icon: Icons.person,
+                icon: AppIcons.personTask,
                 title: "Personal Task",
               ),
             ],
