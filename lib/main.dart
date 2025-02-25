@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:session6_task_nti/core/theme/app_color.dart';
+import 'package:session6_task_nti/screens/screen3.dart';
 import 'package:session6_task_nti/screens/second_main_screen.dart';
 import 'package:session6_task_nti/screens/second_screen.dart';
 
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const SecondMainScreen(),
+      home: const Screen3(),
     );
   }
 }

@@ -1,8 +1,7 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:session6_task_nti/core/constant/app_icons.dart';
+import 'package:session6_task_nti/widget/default_text_form_field.dart';
 
 class SecondMainScreen extends StatelessWidget {
   const SecondMainScreen({super.key});
@@ -89,119 +88,30 @@ class SecondMainScreen extends StatelessWidget {
               SizedBox(
                 height: 17,
               ),
-              Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 10,
-                  vertical: 10,
+              DefaultTextFormField(
+                icon: SvgPicture.asset(
+                  AppIcons.homeTaskScreen2,
                 ),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: TextFormField(
-                  decoration: InputDecoration(
-                    fillColor: Colors.white,
-                    filled: true,
-                    icon: SvgPicture.asset(
-                      AppIcons.homeTaskScreen2,
-                    ),
-                    border: outlineBorder(),
-                    enabledBorder: outlineBorder(),
-                    focusedBorder: outlineBorder(),
-                    errorBorder: outlineBorder(),
-                    labelText: "Task Group",
-                    hintText: "Home",
-                    hintStyle: TextStyle(
-                      fontSize: 14,
-                      color: Color(0xff24252C),
-                      fontWeight: FontWeight.w200,
-                    ),
-                    labelStyle: TextStyle(
-                      fontSize: 9,
-                      color: Color(0xff6E6A7C),
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                ),
+                hintText: "Home",
+                labeText: "Task Group",
+                maxLine: 1,
               ),
               SizedBox(
                 height: 20,
               ),
-              Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 10,
-                  vertical: 10,
-                ),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: TextFormField(
-                  decoration: InputDecoration(
-                    fillColor: Colors.white,
-                    filled: true,
-                    // icon: SvgPicture.asset(
-                    //   AppIcons.homeTaskScreen2,
-                    // ),
-                    border: outlineBorder(),
-                    enabledBorder: outlineBorder(),
-                    focusedBorder: outlineBorder(),
-                    errorBorder: outlineBorder(),
-                    labelText: "Task Name",
-                    hintText: "Grocery Shopping App",
-                    hintStyle: TextStyle(
-                      fontSize: 14,
-                      color: Color(0xff24252C),
-                      fontWeight: FontWeight.w200,
-                    ),
-                    labelStyle: TextStyle(
-                      fontSize: 9,
-                      color: Color(0xff6E6A7C),
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                ),
+              DefaultTextFormField(
+                hintText: "Grocery Shopping App",
+                labeText: "Task Name",
+                maxLine: 1,
               ),
               SizedBox(
                 height: 20,
               ),
-              Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 10,
-                  vertical: 10,
-                ),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: TextFormField(
-                  maxLines: null,
-                  decoration: InputDecoration(
-                    fillColor: Colors.white,
-                    filled: true,
-                    // icon: SvgPicture.asset(
-                    //   AppIcons.homeTaskScreen2,
-                    // ),
-                    border: outlineBorder(),
-                    enabledBorder: outlineBorder(),
-                    focusedBorder: outlineBorder(),
-                    errorBorder: outlineBorder(),
-
-                    labelText: "Description",
-                    hintText:
-                        "Go for grocery to buy some products. \nGo for grocery to buy some products. Go for grocery to buy some products. Go for grocery to buy \n some products.",
-                    hintStyle: TextStyle(
-                      fontSize: 14,
-                      color: Color(0xff24252C),
-                      fontWeight: FontWeight.w200,
-                    ),
-                    labelStyle: TextStyle(
-                      fontSize: 9,
-                      color: Color(0xff6E6A7C),
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                ),
+              DefaultTextFormField(
+                hintText: "Description",
+                labeText: "Description",
+                height: null,
+                maxLine: null,
               ),
               SizedBox(
                 height: 20,
